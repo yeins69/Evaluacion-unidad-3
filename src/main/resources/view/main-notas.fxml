@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="miContenedor" prefHeight="510.0" prefWidth="1145.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.tukiaos.tukiaosacademico.control.NotaFinalControlador">
+
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0"
+              AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <!-- Encabezado -->
+                <AnchorPane>
+                    <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Gestionar Notas Finales">
+                            <font><Font name="System Bold" size="18.0" /></font>
+                        </Label>
+                        <Button layoutX="531.0" layoutY="62.0"
+                                mnemonicParsing="false"
+                                styleClass="btn btn-lg btn-success"
+                                text="Importar desde Excel"
+                                onAction="#importarDesdeExcel" />
+                    </children>
+                    <padding><Insets bottom="5.0" /></padding>
+                </AnchorPane>
+
+                <!-- Formulario de Filtros -->
+                <HBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10" />
+                    </padding>
+                    <children>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Aula:"/>
+                                <ComboBox fx:id="cbxAula" prefWidth="200.0"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Alumno:"/>
+                                <ComboBox fx:id="cbxAlumno" prefWidth="200.0"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Otros campos si es necesario, por ejemplo nota1, nota2, nota3 -->
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Nota 1:"/>
+                                <TextField fx:id="txtNota1" prefWidth="100.0"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Nota 2:"/>
+                                <TextField fx:id="txtNota2" prefWidth="100.0"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Nota 3:"/>
+                                <TextField fx:id="txtNota3" prefWidth="100.0"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Tabla -->
+                <TableView fx:id="tableView" prefHeight="400.0" prefWidth="1140.0">
+                    <!-- Columnas dinámicas en el controlador -->
+                </TableView>
+
+                <!-- Mensaje -->
+                <Label fx:id="lbnMsg"
+                       alignment="TOP_LEFT"
+                       maxHeight="1.7976931348623157E308"
+                       maxWidth="1.7976931348623157E308"
+                       text="Mensaje aquí"
+                       style="-fx-text-fill: #2d7b2d; -fx-font-weight: bold;">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10" />
+                    </padding>
+                </Label>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
